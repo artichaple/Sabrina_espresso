@@ -1,9 +1,9 @@
 import React from 'react'
 import Hero from '../component/Hero'
-import Category from '../component/category'
+import Category from '../component/Category'
 
 
-export const HomePage = () => {
+export const HomePage = () => { 
   return (
 <>
 
