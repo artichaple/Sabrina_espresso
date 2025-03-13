@@ -59,7 +59,7 @@ const Category = () => {
         </div>
       </div>
 
-      <div className=" bg-cyan-950" >
+      <div className=" bg-cyan-950 shadow-2xl shadow-gray-500 " >
        <div className="support_div h-25 flex justify-center gap-x-20 p-5   m-8 font-[Crimson] text-amber-50">
         <div className="h-20 w-100  ml-">
           <p className="text-xl"> World Wide Shipping </p>
