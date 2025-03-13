@@ -27,7 +27,7 @@ const Category = () => {
       <div className="flex justify-center gap-x-20 font-[Crimson] ">
         <div className="categories">
           <img
-            src="src\assets\harypotter.jpeg"
+            src="src/assets/harypotter.jpeg"
             alt=""
             className="rounded-full w-50 h-50 shadow-2xl shadow-gray-500 "
           />
@@ -35,7 +35,7 @@ const Category = () => {
         </div>
         <div className="categories">
           <img
-            src="src\assets\scrap.jpeg"
+            src="src/assets/scrap.jpeg"
             alt=""
             className="rounded-full w-50 h-50 shadow-2xl shadow-gray-500 "
           />
@@ -43,7 +43,7 @@ const Category = () => {
         </div>
         <div className="categories">
           <img
-            src="src\assets\hero_img.jpeg"
+            src="src/assets/hero_img.jpeg"
             alt=""
             className="rounded-full w-50 h-50 shadow-2xl shadow-gray-500 "
           />
@@ -51,7 +51,7 @@ const Category = () => {
         </div>
         <div className="categories">
           <img
-            src="src\assets\rings.jpeg"
+            src="src/assets/rings.jpeg"
             alt=""
             className="rounded-full w-50 h-50 shadow-2xl shadow-gray-500 "
           />

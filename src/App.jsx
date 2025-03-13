@@ -5,6 +5,7 @@ import { OcassionPage } from './pages/OcassionPage'
 import { ForPage } from './pages/ForPage'
 import  Navbar  from './component/Navbar'
 import { ShopPage } from './pages/ShopPage'
+import Footer from './component/Footer'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/for' element={<ForPage/>} />
           <Route path='/shop' element={<ShopPage/>} />
         </Routes>
+       <Footer/>
       </Router>
     </div>
   )
