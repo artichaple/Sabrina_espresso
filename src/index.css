@@ -1,2 +1,148 @@
 @import "tailwindcss";
 
+.card-item {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.heading-NTB{
+   font-family: "Marcellus", Arial, Helvetica, sans-serif;
+   font-weight: 400;
+   line-height: 1;
+   color: #ABABAB;
+
+   font-size: 24px;
+   
+}
+.NTB:hover{
+  color:#333333;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.card {
+  width: 250px; 
+  min-height: 380px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.card-content {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.card-img {
+  width: 100%;
+  position: relative;
+}
+
+.card-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: all 0.5s ease 0s;
+}
+
+/* Image zoom effect on hover */
+.card:hover .card-img img {
+  transform: scale(1.1);
+}
+
+/* Smooth hide effect for title & price */
+.rating_price_title {
+  text-align: center;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Hide title & price with motion */
+.card:hover .rating_price_title {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Button styles */
+.card-btns {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  z-index: 10;
+
+}
+
+/* Show buttons smoothly */
+.card:hover .card-btns {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Styling buttons */
+.card-btns button {
+  background: rgb(82, 82, 82);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Button hover effect */
+.card-btns button:hover {
+  background: #ff9898;
+  transform: scale(1.1);
+}
+
+/* Rating */
+.rating {
+    font-size: 1.5rem;
+    display: inline-grid;
+    grid-template-areas: "full";
+    position: relative;
+    color: #ffc633;
+}
+
+.rating::before {
+    content: "★★★★★";
+    grid-area: full;
+    overflow: hidden;
+    white-space: nowrap;
+    width: calc((var(--rating, 0) / 5) * 100%);
+    color: #ffc633;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.rating::after {
+    content: "☆☆☆☆☆";
+    grid-area: full;
+    white-space: nowrap;
+    color: #d3d3d3;
+}

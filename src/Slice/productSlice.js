@@ -2,7 +2,7 @@ import { createSlice ,createAsyncThunk } from "@reduxjs/toolkit";
 
 
 export const fetchProduct=createAsyncThunk("product/fetchProducts",async()=>{
-    const res=await fetch("https://dummyjson.com/products/10");
+    const res=await fetch("https://dummyjson.com/products?/limit=8");
     const data=await res.json();
     return data.products;
 });
@@ -10,7 +10,7 @@ export const fetchProduct=createAsyncThunk("product/fetchProducts",async()=>{
 const productSlice=createSlice({
     name:"product",
     initialState:{
-        product:[],
+        products:[],
         status:"idle",
         error:null,
     },
@@ -24,8 +24,8 @@ builder
     state.status="loading";
 }) 
 .addCase(fetchProduct.fulfilled,(state,action)=>{
-    state.status="success";
-    state.product=action.payload;
+    state.status="succeeded";
+    state.products=action.payload;
 })
 .addCase(fetchProduct.rejected,(state,action)=>{
      state.status="failed";

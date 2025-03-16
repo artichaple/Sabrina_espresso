@@ -16,13 +16,13 @@ const Navbar = () => {
       <nav className="bg-teal-500 text-white flex items-center justify-between py-4 px-8 shadow-md">
         {/* Logo */}
         <div>
-          <Link to="/" className="text-2xl font-bold  cat-para">
+          <Link to="/" className="text-2xl font-bold  ml-10  cat-para">
             Serena's Handmade
           </Link>
         </div>
 
         {/* Menu Links */}
-        <ul className="hidden md:flex space-x-16  ">
+        <ul className="hidden md:flex space-x-18 text-lg font-semibold">
           <li>
             <Link to="/" className="hover:text-gray-200 transition">Home</Link>
           </li>
@@ -38,7 +38,7 @@ const Navbar = () => {
         </ul>
 
        {/* icons */}
-        <div className="flex space-x-6 text-xl">
+        <div className="flex space-x-6 text-xl mr-10">
           <a href="#" className="hover:text-gray-300"><i className="bx bx-user"></i></a>
           <a href="#" className="hover:text-gray-300"><i className="bx bx-search-alt-2"></i></a>
           <a href="#" className="hover:text-gray-300"><i className="bx bx-heart"></i></a>
