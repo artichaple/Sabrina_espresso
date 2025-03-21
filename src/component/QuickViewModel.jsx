@@ -59,10 +59,10 @@ const QuickViewModel = () => {
 
               </tbody>
             </table>
-            <div className="p-4">
-            <span><button ><i className='bx bx-heart '></i></button></span>  
+            <div className=" popup-btns p-4 ">
+            <span><button ><i className='bx bx-heart  heart_btn  '></i></button></span>  
               
-             <span><button><i className='bx bx-cart-alt'></i>ADD TO CART</button></span>  
+             <span><button><i className='bx bx-cart-alt cart_btn'>ADD TO CART</i></button></span>  
             
             </div>
            
