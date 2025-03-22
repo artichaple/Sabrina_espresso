@@ -22,7 +22,7 @@ export const removeItemFromStorage = createAsyncThunk("cart/removeItem", async (
         // Save updated cart back to localStorage
         localStorage.setItem("cart", JSON.stringify(updatedCart));
 
-        return updatedCart; // ✅ Return updated cart for Redux state
+        return updatedCart; // Return updated cart for Redux state
     } catch (error) {
         console.error("Error removing item from cart:", error);
         throw error;
@@ -43,8 +43,8 @@ const saveCartToLocalStorage = (cart) => {
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    items: [], // Initially empty, will be populated by async thunk
-    status: "idle", // "idle" | "loading" | "succeeded" | "failed"
+    items: [], 
+    status: "idle", 
     error: null,
     quantity : 0,
   },
@@ -58,10 +58,10 @@ const cartSlice = createSlice({
       if (existingItem) {
         existingItem.quantity += 1;
       } else {
-        state.items.push({ ...item, quantity: 1 }); // ✅ Add new item to cart
+        state.items.push({ ...item, quantity: 1 }); //  Add new item to cart
       }
 
-      saveCartToLocalStorage(state.items); // ✅ Save the entire cart array
+      saveCartToLocalStorage(state.items); // Save the entire cart array
     },
   },
 
@@ -73,7 +73,7 @@ const cartSlice = createSlice({
       })
       .addCase(loadCartFromStorage.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.items = action.payload; // ✅ Update Redux state with loaded cart
+        state.items = action.payload; // Update Redux state with loaded cart
       })
       .addCase(loadCartFromStorage.rejected, (state, action) => {
         state.status = "failed";
@@ -82,7 +82,7 @@ const cartSlice = createSlice({
 
       builder
       .addCase(removeItemFromStorage.fulfilled, (state, action) => {
-        state.items = action.payload; // ✅ Update Redux state after removal
+        state.items = action.payload; // Update Redux state after removal
       })
       .addCase(removeItemFromStorage.rejected, (state, action) => {
         state.error = action.error.message;

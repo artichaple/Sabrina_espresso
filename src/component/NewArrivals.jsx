@@ -3,7 +3,7 @@ import { fetchProduct } from "../Slice/productSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategory } from "../Slice/categorySlice";
 import ProductCard from "./ProductCard";
-import QuickViewModel from "./quickViewModel";
+import QuickViewModel from "./QuickViewModel";
 
 
 const NewArrivals = () => {
