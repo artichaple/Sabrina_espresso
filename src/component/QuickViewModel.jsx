@@ -6,10 +6,17 @@ const QuickViewModel = () => {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.quickview.product);
 
+
   
   if (!product) {
     return null;
   }
+
+
+
+
+
+
 
   return (
     <div className="modal-overlay">
@@ -62,7 +69,7 @@ const QuickViewModel = () => {
             <div className=" popup-btns p-4 ">
             <span><button ><i className='bx bx-heart  heart_btn  '></i></button></span>  
               
-             <span><button><i className='bx bx-cart-alt cart_btn'>ADD TO CART</i></button></span>  
+             <span><button ><i className='bx bx-cart-alt cart_btn'  >ADD TO CART</i></button></span>  
             
             </div>
            

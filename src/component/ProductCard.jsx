@@ -1,9 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setQuickView } from '../Slice/quickviewSlice';
+import { addToCart } from '../Slice/cartSlice';
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
+ 
 
   return (
     <div className="card">
@@ -21,7 +23,7 @@ const ProductCard = ({ product }) => {
         </div>
 
         <div className="card-btns">
-          <button className="add-to-cart">
+          <button className="add-to-cart " onClick={()=> dispatch(addToCart(product))}>
           <i className='bx bx-cart-alt'></i>
        </button>
           
@@ -29,6 +31,7 @@ const ProductCard = ({ product }) => {
             <i className="bx bx-search-alt-2"></i>
           </button>
         </div>
+        
       </div>
     </div>
   );

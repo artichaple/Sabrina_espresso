@@ -42,7 +42,7 @@ const Navbar = () => {
           <a href="#" className="hover:text-gray-300"><i className="bx bx-user"></i></a>
           <a href="#" className="hover:text-gray-300"><i className="bx bx-search-alt-2"></i></a>
           <a href="#" className="hover:text-gray-300"><i className="bx bx-heart"></i></a>
-          <a href="#" className="hover:text-gray-300"> <i className='bx bx-cart-alt'></i></a>
+          <Link to="/cartpage" className="hover:text-gray-300"> <i className='bx bx-cart-alt'></i></Link>
          
           
       
