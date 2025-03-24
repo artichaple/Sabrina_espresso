@@ -10,24 +10,34 @@ export const loadCartFromStorage = createAsyncThunk("cart/loadCart", async () =>
     return []; // Return an empty array if parsing fails
   }
 });
-export const removeItemFromStorage = createAsyncThunk("cart/removeItem", async (id) => {
-    try {
-        // Get cart from localStorage
-        const savedCart = localStorage.getItem("cart");
-        const cartItems = savedCart ? JSON.parse(savedCart) : [];
+export const removeItemFromStorage = createAsyncThunk(
+  "cart/removeItem",
+  async (id) => {
+      try {
+          // Get cart from localStorage
+          const savedCart = localStorage.getItem("cart");
+          const cartItems = savedCart ? JSON.parse(savedCart) : [];
 
-        // Filter out the item with the given id
-        const updatedCart = cartItems.filter((item) => item.id !== id);
+          // Find the item and reduce its quantity
+          const updatedCart = cartItems.map((item) => {
+              if (item.id === id) {
+                  return item.quantity > 1 
+                      ? { ...item, quantity: item.quantity - 1 } // Reduce quantity
+                      : null; // If quantity becomes 0, remove item
+              }
+              return item;
+          }).filter(Boolean); 
+          // Save updated cart back to localStorage
+          localStorage.setItem("cart", JSON.stringify(updatedCart));
 
-        // Save updated cart back to localStorage
-        localStorage.setItem("cart", JSON.stringify(updatedCart));
+          return updatedCart; // Return updated cart for Redux state
+      } catch (error) {
+          console.error("Error removing item from cart:", error);
+          throw error;
+      }
+  }
+);
 
-        return updatedCart; // Return updated cart for Redux state
-    } catch (error) {
-        console.error("Error removing item from cart:", error);
-        throw error;
-    }
-});
 
 
 
@@ -83,9 +93,13 @@ const cartSlice = createSlice({
       builder
       .addCase(removeItemFromStorage.fulfilled, (state, action) => {
         state.items = action.payload; // Update Redux state after removal
+      
+        
+
       })
       .addCase(removeItemFromStorage.rejected, (state, action) => {
         state.error = action.error.message;
+
       });
       
   },
